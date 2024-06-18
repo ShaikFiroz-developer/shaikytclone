@@ -10,11 +10,11 @@ function Search() {
   const [search, setSearch] = useState(null);
   const [videoData, setVideoData] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const params = useSearchParams();
-    setSearch(params.get("q"));
-  }, []);
+    setSearch(searchParams.get("q"));
+  }, [searchParams]);
 
   useEffect(() => {
     if (search) {
@@ -25,9 +25,9 @@ function Search() {
             `/api/filtervideos?elename=${elename}&orderby=relevance`
           );
           if (response.ok) {
-            setDataLoaded(true);
             const videosData = await response.json();
             setVideoData(videosData.filterdata.items);
+            setDataLoaded(true);
           } else {
             console.error("Error fetching data:", response.status);
           }
@@ -65,13 +65,11 @@ function Search() {
         >
           {dataLoaded && (
             <div className="w-full pl-5 pr-5">
-              {videoData?.map((video, index) => {
-                return (
-                  <div className="w-full  mt-5 mb-14" key={index}>
-                    <Searchpagecards element={video} />
-                  </div>
-                );
-              })}
+              {videoData?.map((video, index) => (
+                <div className="w-full mt-5 mb-14" key={index}>
+                  <Searchpagecards element={video} />
+                </div>
+              ))}
             </div>
           )}
         </div>
