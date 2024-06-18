@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Header1 from "@/components/head";
 import "../globals.css";
 import { useSearchParams } from "next/navigation";
@@ -8,7 +8,7 @@ import { ClipLoader } from "react-spinners";
 import MobileComponent from "./mobilewatch/mbw";
 import DesktopComponent from "./desk/dsc";
 
-function Page() {
+function PageContent() {
   const searchParams = useSearchParams();
   const [videoparas, setVideoparam] = useState("");
   const [isDesktop, setIsDesktop] = useState(false);
@@ -39,6 +39,14 @@ function Page() {
         <MobileComponent vid={videoparas} />
       )}
     </div>
+  );
+}
+
+function Page() {
+  return (
+    <Suspense fallback={<ClipLoader color="blue" />}>
+      <PageContent />
+    </Suspense>
   );
 }
 

@@ -52,7 +52,7 @@ function Searchpagecards({ element }) {
       )}
 
       {/*for mobile devices*/}
-      <section className="lg:hidden">
+      <section className="lg:hidden md:hidden">
         <Link className="flex w-full" href={`/watch?q=${element?.id?.videoId}`}>
           <section className="lg:hidden">
             <img
@@ -83,8 +83,11 @@ function Searchpagecards({ element }) {
         </Link>
       </section>
       {/*for desktop others devices*/}
-      <section className="hidden lg:flex w-full s">
-        <Link className="flex w-full" href={`/watch?q=${element?.id?.videoId}`}>
+      <section className="hidden lg:flex md:flex w-full s">
+        <Link
+          className="flex w-full cursor-pointer"
+          href={`/watch?q=${element?.id?.videoId}`}
+        >
           <div className="w-96 h-60 object-contain">
             <img
               className="w-full h-full"

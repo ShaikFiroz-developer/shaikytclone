@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import axios from "axios";
+import Link from "next/link";
 
 const DesktopComponent = ({ vid }) => {
   const [videoarr, setvideoarray] = useState([]);
@@ -79,7 +80,7 @@ const DesktopComponent = ({ vid }) => {
         >
           {dataloaded ? (
             !showVideo ? (
-              <div className="relative w-11/12">
+              <div className="relative w-11/12 lg:min-h-80">
                 <img
                   src={videoarr?.snippet?.thumbnails?.maxres?.url}
                   alt="thumbnail"
@@ -139,15 +140,17 @@ const DesktopComponent = ({ vid }) => {
                 className="text-white bg-black mt-2 mr-12 mb-4 w-5/6 min-h-56"
                 key={index}
               >
-                <img
-                  src={element?.snippet?.thumbnails?.high?.url}
-                  className="w-full h-56"
-                />
-                <h4 className="font-semibold">{element?.snippet?.title}</h4>
-                <span className="flex text-xs justify-between w-full">
-                  <b>{element?.snippet?.channelTitle}</b>
-                  <p>{formatDate(videoarr?.snippet?.publishedAt)}</p>
-                </span>
+                <Link href={`/watch?q=${element?.id?.videoId}`}>
+                  <img
+                    src={element?.snippet?.thumbnails?.high?.url}
+                    className="w-full h-56"
+                  />
+                  <h4 className="font-semibold">{element?.snippet?.title}</h4>
+                  <span className="flex text-xs justify-between w-full">
+                    <b>{element?.snippet?.channelTitle}</b>
+                    <p>{formatDate(videoarr?.snippet?.publishedAt)}</p>
+                  </span>
+                </Link>
               </div>
             );
           })}
