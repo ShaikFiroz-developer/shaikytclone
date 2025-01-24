@@ -1,7 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-const serverurl = process.env.NEXTAUTH_URL;
+const serverurl =
+  "https://vercel.com/shaik-firozs-projects/ytserver/9DJR3vL3TVYNWY2wXptxWuWCLPS2";
 
 export const AuthContext = createContext();
 

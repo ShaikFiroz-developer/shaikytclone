@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { AuthContext } from "../auth";
 
-const serverurl = process.env.NEXTAUTH_URL;
-
+const serverurl =
+  "https://vercel.com/shaik-firozs-projects/ytserver/9DJR3vL3TVYNWY2wXptxWuWCLPS2";
 function Signin() {
   const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState(null);
