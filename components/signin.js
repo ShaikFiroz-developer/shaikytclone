@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { signIn } from "next-auth/react";
-
 
 function Signin({ canclesigin, userdetaisl }) {
   const [showPass, setShowPass] = useState(false);
@@ -12,18 +10,6 @@ function Signin({ canclesigin, userdetaisl }) {
     e.preventDefault();
     const mobileNumber = e.target.youtubefiroznumb.value;
     const password = e.target.youtubefiroapassword.value;
-
-    const result = await signIn("credentials", {
-      redirect: false,
-      mobile: mobileNumber,
-      password: password,
-    });
-
-    if (result.error) {
-      setError(result.error);
-    } else {
-      userdetaisl(result);
-    }
   };
 
   return (

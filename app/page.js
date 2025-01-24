@@ -1,5 +1,6 @@
 // pages/index.js (or Home.js, depending on your project structure)
-import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Header1 from "@/components/head";
 import Homepagebody from "@/components/homebody";
 import Signin from "@/components/signin";
 export const metadata = {
@@ -10,7 +11,9 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
+      <Header1 />
       <Homepagebody />
+      <Footer />
     </div>
   );
 }

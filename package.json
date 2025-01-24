@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
-    "axios": "^1.7.2",
+    "axios": "^1.7.9",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.1",
     "next": "^14.2.3",
@@ -21,7 +21,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-spinners": "^0.13.8",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "shaiksyoutubeclone": "file:"
   },
   "devDependencies": {
     "postcss": "^8",

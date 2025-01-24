@@ -32,25 +32,6 @@ function Searchpagecards({ element }) {
 
   return (
     <div className="w-full">
-      {!dataloaded && (
-        <div
-          style={{
-            position: "fixed",
-            zIndex: "102",
-            width: "100vw",
-            height: "88vh",
-            display: "flex",
-            marginTop: "16vh",
-            marginBottom: "4vh",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "black",
-          }}
-        >
-          <ClipLoader color="blue" />
-        </div>
-      )}
-
       {/*for mobile devices*/}
       <section className="lg:hidden md:hidden">
         <Link className="flex w-full" href={`/watch?q=${element?.id?.videoId}`}>
@@ -103,12 +84,6 @@ function Searchpagecards({ element }) {
             <span className="flex justify-between  mt-16 pl-5 pr-5 sm:text-xs text-sm">
               <p className="text-xl text-yellow-700">
                 <span className="flex justify-center ">
-                  <img
-                    src={url}
-                    className="rounded-full"
-                    height={30}
-                    width={40}
-                  />
                   <b className="mt-2 ml-3">{element?.snippet?.channelTitle}</b>
                 </span>
               </p>
