@@ -5,8 +5,7 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { AuthContext } from "../auth";
 
-const serverurl =
-  "https://vercel.com/shaik-firozs-projects/ytserver/9DJR3vL3TVYNWY2wXptxWuWCLPS2";
+const serverurl = "https://ytserver.vercel.app";
 
 function Signup({ cancelSignup }) {
   const { isAuthenticated } = useContext(AuthContext);

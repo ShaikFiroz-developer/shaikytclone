@@ -5,8 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { AuthContext } from "../auth";
 
-const serverurl =
-  "https://vercel.com/shaik-firozs-projects/ytserver/9DJR3vL3TVYNWY2wXptxWuWCLPS2";
+const serverurl = "https://ytserver.vercel.app";
 function Signin() {
   const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState(null);

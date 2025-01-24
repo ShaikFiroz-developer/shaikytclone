@@ -1,8 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-const serverurl =
-  "https://vercel.com/shaik-firozs-projects/ytserver/9DJR3vL3TVYNWY2wXptxWuWCLPS2";
+const serverurl = "https://ytserver.vercel.app";
 
 export const AuthContext = createContext();
 
